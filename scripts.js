@@ -1,63 +1,45 @@
-// Funcionalidad para el botón de "Explora más"
-const ctaBtn = document.querySelector('.cta-btn');
-ctaBtn.addEventListener('click', function () {
-    window.scrollTo({
-        top: document.querySelector('.experiencias').offsetTop,
-        behavior: 'smooth'
-    });
-});
+// Respuestas automáticas
+const responses = {
+    "hola": "¡Hola! ¿En qué puedo ayudarte hoy?",
+    "adiós": "¡Hasta luego! Vuelve cuando lo necesites.",
+    "¿cómo puedo mejorar mi suelo?": "Puedes mejorar el suelo aplicando compost o rotando cultivos para mantener la fertilidad.",
+    "¿qué cultivos son ideales para invierno?": "En invierno, puedes optar por cultivos como la col rizada, zanahorias y espinacas.",
+    "¿cómo controlo las plagas de forma natural?": "Usa remedios naturales como ajo, neem o cultivos asociados para evitar plagas.",
+    // Más respuestas aquí
+};
 
-// Funcionalidad para el formulario de comentarios
-const commentForm = document.querySelector('.comment-form');
-commentForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const commentText = commentForm.querySelector('textarea').value;
-    if (commentText) {
-        const commentDiv = document.createElement('div');
-        commentDiv.classList.add('comment');
-        commentDiv.innerHTML = `<p>${commentText}</p>`;
-        document.querySelector('.comments').appendChild(commentDiv);
-        commentForm.querySelector('textarea').value = ''; // Limpiar el campo
+// Función para enviar mensajes
+function sendMessage() {
+    const userInput = document.getElementById("userInput").value.trim();
+    const chatContent = document.getElementById("chatContent");
+
+    if (!userInput) return; // No enviar mensajes vacíos
+
+    // Mostrar el mensaje del usuario
+    const userMessage = document.createElement("div");
+    userMessage.style.margin = "10px 0";
+    userMessage.style.textAlign = "right";
+    userMessage.innerHTML = `<span style="background-color: #d1ecf1; padding: 8px 12px; border-radius: 10px; display: inline-block;">${userInput}</span>`;
+    chatContent.appendChild(userMessage);
+
+    // Determinar la respuesta
+    const responseMessage = document.createElement("div");
+    responseMessage.style.margin = "10px 0";
+    responseMessage.style.textAlign = "left";
+    const lowerInput = userInput.toLowerCase();
+
+    if (responses[lowerInput]) {
+        responseMessage.innerHTML = `<span style="background-color: #f8d7da; padding: 8px 12px; border-radius: 10px; display: inline-block;">${responses[lowerInput]}</span>`;
+    } else {
+        responseMessage.innerHTML = `<span style="background-color: #f8d7da; padding: 8px 12px; border-radius: 10px; display: inline-block;">No entiendo esa pregunta. Por favor, intenta de nuevo.</span>`;
     }
-});
 
-// Funcionalidad para el chatbot IA
-const chatInput = document.querySelector('.chat-input input');
-const chatButton = document.querySelector('.chat-input button');
-const chatContent = document.querySelector('.chat-content');
+    chatContent.appendChild(responseMessage);
 
-chatButton.addEventListener('click', function () {
-    const userMessage = chatInput.value.trim();
-    if (userMessage) {
-        // Mostrar el mensaje del usuario
-        chatContent.innerHTML += `<div class="message user-message">${userMessage}</div>`;
-        
-        // Responder automáticamente con una respuesta predeterminada
-        setTimeout(() => {
-            const botResponse = document.createElement('div');
-            botResponse.classList.add('message', 'bot-message');
-            botResponse.innerHTML = `¡Hola! ¿Cómo puedo ayudarte con tus cultivos hoy?`;
-            chatContent.appendChild(botResponse);
-            chatContent.scrollTop = chatContent.scrollHeight; // Desplazar al final del chat
-        }, 1000);
-        
-        chatInput.value = ''; // Limpiar el campo
-        chatContent.scrollTop = chatContent.scrollHeight; // Desplazar al final
-    }
-});
+    // Desplazar al final
+    chatContent.scrollTop = chatContent.scrollHeight;
 
-// Funcionalidad para mostrar productos en el carrito (básico)
-const productButtons = document.querySelectorAll('.product-card button');
-const cart = [];
+    // Limpiar el campo de entrada
+    document.getElementById("userInput").value = "";
+}
 
-productButtons.forEach(button => {
-    button.addEventListener('click', function () {
-        const productName = this.parentElement.querySelector('h3').textContent;
-        const productPrice = this.parentElement.querySelector('.price').textContent;
-        
-        // Agregar el producto al carrito
-        cart.push({ name: productName, price: productPrice });
-        
-        alert(`Producto añadido: ${productName} por ${productPrice}`);
-    });
-});

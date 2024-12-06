@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriTech - Innovación para Agricultores</title>
+    <title>Página de Agricultores</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- Sección de Introducción -->
-    <section id="introduccion" class="section intro">
-    <div class="intro-content">
+    <section class="intro">
         <div class="intro-text">
-            <h1>Bienvenidos a AgriConnect</h1>
-            <p>Una plataforma que conecta a agricultores para compartir experiencias, vender productos y aprovechar la inteligencia artificial.</p>
-            <button class="cta-btn">Únete a nuestra comunidad</button>
+            <h1>Bienvenidos a la Comunidad de Agricultores</h1>
+            <p>Conectamos a los agricultores para compartir experiencias y productos.</p>
+            <button class="cta-btn">¡Únete ahora!</button>
         </div>
-    </div>
     </section>
 
-
-
-    <!-- Sección de Experiencias -->
+ <!-- Sección de Experiencias -->
     <section class="experiencias">
         <h2>Experiencias de Agricultores</h2>
         <div class="card-container">
@@ -51,71 +49,116 @@
             </div>
         </div>
     </section>
-
-    <!-- Sección de Venta de Productos -->
-    <section class="ventas">
-        <h2>Productos para tu Campo</h2>
-        <div class="product-gallery">
-            <div class="product-card">
-                <img src="image/semillas.jpg" alt="Producto 1">
-                <h3>Semillas de Alta Calidad</h3>
-                <p class="price">$20</p>
-                <button>Añadir al carrito</button>
+<!-- Sección de Productos -->
+<section class="ventas">
+    <h2>Productos de Campo a la Venta</h2>
+    <div class="product-gallery">
+        <div class="product-card">
+            <img src="image/palta.jpg" alt="Producto 1">
+            <div class="seller-info">
+                <p>Vendedor: Juan Pérez</p>
             </div>
-            <div class="product-card">
-                <img src="image/fertilizantes.jpeg" alt="Producto 2">
-                <h3>Fertilizantes Orgánicos</h3>
-                <p class="price">$15</p>
-                <button>Añadir al carrito</button>
-            </div>
-            <div class="product-card">
-                <img src="image/herramienta.jpg" alt="Producto 3">
-                <h3>Herramientas de Cultivo</h3>
-                <p class="price">$30</p>
-                <button>Añadir al carrito</button>
-            </div>
+            <div class="price">$20 por kg</div>
+            <button>Comprar</button>
         </div>
-    </section>
+        <div class="product-card">
+            <img src="image/uva.jpg" alt="Producto 2">
+            <div class="seller-info">
+                <p>Vendedor: María González</p>
+            </div>
+            <div class="price">$35 por kg</div>
+            <button>Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="image/arandano.jpg" alt="Producto 3">
+            <div class="seller-info">
+                <p>Vendedor: Carlos Ramírez</p>
+            </div>
+            <div class="price">$40 por kg</div>
+            <button>Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="image/esparragos.jpg" alt="Producto 4">
+            <div class="seller-info">
+                <p>Vendedor: Ana López</p>
+            </div>
+            <div class="price">$25 por kg</div>
+            <button>Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="image/cacao.jpg" alt="Producto 5">
+            <div class="seller-info">
+                <p>Vendedor: Pedro García</p>
+            </div>
+            <div class="price">$15 por kg</div>
+            <button>Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="image/quinua.jpg" alt="Producto 6">
+            <div class="seller-info">
+                <p>Vendedor: Laura Díaz</p>
+            </div>
+            <div class="price">$50 por kg</div>
+            <button>Comprar</button>
+        </div>
+    </div>
+    <div class="add-product">
+        <h3>Pon tu producto en venta</h3>
+        <form>
+            <input type="text" placeholder="Nombre del producto">
+            <textarea placeholder="Descripción del producto"></textarea>
+            <input type="text" placeholder="Precio por kg">
+            <button type="submit">Publicar producto</button>
+        </form>
+    </div>
+</section>
 
-    <!-- Sección del Blog -->
+
+    <!-- Sección de Blog -->
     <section class="blog">
-        <h2>Blog AgroTecnológico</h2>
+        <h2 class="section-title">Blog de Agricultores</h2>
         <div class="post-card">
-            <h3>Cómo la IA Está Revolucionando la Agricultura</h3>
-            <p>Descubre cómo la Inteligencia Artificial mejora los cultivos y procesos agrícolas.</p>
-            <button class="like-btn">0 Likes</button>
-            <form class="comment-form">
-                <textarea placeholder="Deja un comentario"></textarea>
-                <button type="submit">Comentar</button>
-            </form>
-            <div class="comments"></div>
+            <h3>El Futuro de la Agricultura Sostenible</h3>
+            <p>Explorando nuevas técnicas para el cultivo ecológico que no solo beneficien al medio ambiente, sino que también mejoren los rendimientos de las cosechas.</p>
+            <button class="like-btn">Me gusta</button>
         </div>
-    </section>
 
-    <!-- Sección de Inteligencia Artificial -->
-    <section class="ia">
-        <h2>Asistente Agro con IA</h2>
-        <div class="chat-container">
-            <div class="chat-box">
-                <div class="chat-header">Asistente Agro</div>
-                <div class="chat-content">
-                    <div class="message">Hola, ¿en qué te puedo ayudar hoy?</div>
-                </div>
-                <div class="chat-input">
-                    <input type="text" placeholder="Escribe tu pregunta...">
-                    <button>Enviar</button>
-                </div>
+        <div class="post-card">
+            <h3>Innovaciones en la Tecnología Agrícola</h3>
+            <p>Los avances tecnológicos en drones, sensores y automatización están revolucionando la forma en que cultivamos y gestionamos las tierras agrícolas.</p>
+            <button class="like-btn">Me gusta</button>
+        </div>
+
+        <div class="post-card">
+            <h3>Cómo Mejorar la Calidad del Suelo</h3>
+            <p>Consejos prácticos para mantener la salud del suelo, clave para asegurar cosechas saludables y sostenibles.</p>
+            <button class="like-btn">Me gusta</button>
+        </div>
+   <!-- Sección de Inteligencia Artificial -->
+<section class="ia">
+    <h2 class="section-title">Asistente Virtual de IA</h2>
+    <div class="chat-container">
+        <div class="chat-box">
+            <div class="chat-header">
+                Asistente Virtual
+            </div>
+            <div class="chat-content" id="chatContent">
+                <!-- Las respuestas del asistente aparecerán aquí -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Escribe tu pregunta aquí..." />
+                <button onclick="sendMessage(hola)">Enviar</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Pie de Página -->
+
     <footer>
-        <p>&copy; 2024 AgriTech. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Comunidad de Agricultores</p>
     </footer>
+<script src="script.js"></script>
 
-    <script src="scripts.js"></script>
 </body>
+
 </html>
-
-
